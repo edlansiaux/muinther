@@ -1,0 +1,4 @@
+^renv$
+^renv\.lock$
+^muinther\.Rproj$
+^\.Rproj\.user$

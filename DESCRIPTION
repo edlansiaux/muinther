@@ -1,0 +1,24 @@
+Package: muinther
+Title: Mutual Information Theory computation for numerous variables
+Version: 0.0.0.9000
+Authors@R: 
+    c(person(given = "Edouard",
+           family = "Lansiaux",
+           role = c("aut", "cre"),
+           email = "edouard.lansiaux.etu@univ-lille.com",
+           comment = c(ORCID = "0000-0002-4342-8707")),
+    person(given = "Philippe Pierre",
+           family = "Pébaÿ",
+           role = c("aut"),
+           email = "philippe.pebay@ng-analytics.com",
+           comment = c(ORCID = "0000-0002-2311-3775")))
+Description: R package to compute mutual information theory outputs for multiple variables association study. Final outputs include a table and a heatmap.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

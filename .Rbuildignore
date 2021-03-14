@@ -2,3 +2,4 @@
 ^renv\.lock$
 ^muinther\.Rproj$
 ^\.Rproj\.user$
+^devtools_history\.R$

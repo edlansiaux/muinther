@@ -20,12 +20,11 @@ loop()
 #Table output
 ```{r}
 #' @import readr
-entropy_outputs <- read_csv("I:/muinther/R/entropy_outputs.csv")
+entropy_outputs <- readr::read_csv("entropy_outputs.csv")
 View(entropy_outputs)
 ```
 #Heatmap output
 ```{r}
-a <- read_csv("I:/muinther/R/entropy_outputs.csv")
-heatmap2(a)
+heatmap2(entropy_outputs)
 ```
 

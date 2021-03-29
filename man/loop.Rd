@@ -7,9 +7,6 @@ Contingence table of normalized mutual information theory coefficients}
 \usage{
 loop(x)
 }
-\arguments{
-\item{s}{is the source data csv file}
-}
 \description{
 Loop for computate all entropy metrics outputs
 Contingence table of normalized mutual information theory coefficients

@@ -7,8 +7,6 @@ import math
 import numpy as np
 import scipy.stats as ss
 
-os.chdir(str(input('What is the working directory?')))
-
 header_row = [
         'X studied variable',
         'Y studied variable',
@@ -16,7 +14,7 @@ header_row = [
         'Computed marginal EPMF of Y',
         'Chi2',
         'Chi2 p-value',
-        'Information entropy of x',
+        'Information entropy of X',
         'information entropy of Y',
         'Joint information entropy of X and Y ',
         'Conditional information entropy of Y given X',
@@ -30,11 +28,10 @@ with w:
   writer = csv.writer(w)
   writer.writerow(header_row)
 w.close()
-
-
-Z = int(input('What is the first studied X variable column number?'))
+G = str(input('What is the source data?'))
+Z = int(input('What is the first studied X variable column number?')) #First studied X variable column number
 W = Z #First studied Y variable column number
-A = int(input('How many variables studied?'))
+A = int(input('How many variables studied?')) #Number of studied variables
 B = Z
 C = 0
 D = 0
@@ -46,7 +43,7 @@ def parse_command_line1():
     """
     
     # Default parameter values
-    file_name = 'I:/RNAseq/docs_phenotype_file_1.csv'
+    file_name = G
     lag_Y_on_X = 0
     col_X = Z
     col_Y = W

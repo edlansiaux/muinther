@@ -1,4 +1,4 @@
-devtools::use_package('reticulate')
-devtools::use_package('ggplot2')
-devtools::use_package('rmarkdown')
-devtools::use_package('readr')
+usethis::use_package('reticulate')
+usethis::use_package('ggplot2')
+usethis::use_package('rmarkdown')
+usethis::use_package('readr')

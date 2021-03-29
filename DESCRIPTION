@@ -24,4 +24,6 @@ VignetteBuilder: knitr
 Imports: 
     reticulate,
     ggplot2,
+    ggtext,
+    readr,
     rmarkdown

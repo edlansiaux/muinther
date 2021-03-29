@@ -7,13 +7,25 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
-```
 
 ```{r setup}
 library(muinther)
 ```
+
+# Entropy outputs computation on a csv file
+```{r}
+loop()
+```
+
+#Table output
+```{r}
+#' @import readr
+entropy_outputs <- read_csv("I:/muinther/R/entropy_outputs.csv")
+View(entropy_outputs)
+```
+#Heatmap output
+```{r}
+a <- read_csv("I:/muinther/R/entropy_outputs.csv")
+heatmap2(a)
+```
+

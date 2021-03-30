@@ -2,6 +2,9 @@
 
 export(heatmap2)
 export(loop)
+export(pearsontable)
+import(Hmisc)
+import(data.table)
 import(ggplot2)
 import(ggtext)
 import(readr)

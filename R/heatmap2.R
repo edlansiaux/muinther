@@ -1,6 +1,6 @@
 #' Contingence table heatmap
 #' Contingence table of normalized mutual information theory coefficients
-#' @param z is the entropy metrics outputs csv file
+#' @param z is the entropy metrics outputs matrix file
 #'
 #' @import ggtext
 #' @import ggplot2
@@ -8,9 +8,28 @@
 #' @export
 
 heatmap2 <- function(z){
+  z <- readr::read_csv(z)
   z <- as.data.frame(z)
   z <- z[, - c(3,4,5,7,8,9,10,11,12)]
   names(z) <- c("var1", "var2", "value_p", "value_r")
+
+  ggplot2::theme_set(
+    ggplot2::theme_light(base_size = 11) +
+      ggplot2::theme(
+        plot.title = ggtext::element_markdown(),
+        plot.title.position = "plot",
+        plot.subtitle = ggtext::element_markdown(face = "italic", size = ggplot2::rel(0.8)),
+        plot.caption = ggtext::element_markdown(face = "italic", size = ggplot2::rel(0.65)),
+        plot.caption.position = "plot",
+        axis.text.x = ggtext::element_markdown(),
+        axis.text.x.top = ggtext::element_markdown(),
+        axis.text.y = ggtext::element_markdown(),
+        legend.box.just = "left",
+        legend.key.size = ggplot2::unit(0.5, "lines"),
+        legend.text = ggplot2::element_text(size = ggplot2::rel(0.5))
+      )
+  )
+
 
   ggplot2::ggplot(
     data = z,

@@ -8,7 +8,7 @@ Contingence table of normalized mutual information theory coefficients}
 heatmap2(z)
 }
 \arguments{
-\item{z}{is the entropy metrics outputs csv file}
+\item{z}{is the entropy metrics outputs matrix file}
 }
 \description{
 Contingence table heatmap

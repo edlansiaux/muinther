@@ -7,6 +7,9 @@ Contingence table of normalized mutual information theory coefficients}
 \usage{
 loop(x)
 }
+\arguments{
+\item{x}{is the working directory}
+}
 \description{
 Loop for computate all entropy metrics outputs
 Contingence table of normalized mutual information theory coefficients

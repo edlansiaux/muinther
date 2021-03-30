@@ -11,20 +11,15 @@ vignette: >
 ```{r setup}
 library(muinther)
 ```
-
+#Pearson contingence table
+```{r}
+pearsontable("I:/muinther/R/muinther/docs_phenotype_file_1.csv")
+```
 # Entropy outputs computation on a csv file
 ```{r}
-loop()
-```
-
-#Table output
-```{r}
-#' @import readr
-entropy_outputs <- readr::read_csv("entropy_outputs.csv")
-View(entropy_outputs)
+loop("I:/muinther/R")
 ```
 #Heatmap output
 ```{r}
-heatmap2(entropy_outputs)
+heatmap2("I:/muinther/R/muinther/vignettes/entropy_outputs.csv")
 ```
-

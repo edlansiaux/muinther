@@ -1,4 +1,8 @@
 usethis::use_package('reticulate')
 usethis::use_package('ggplot2')
+usethis::use_package('ggtext')
 usethis::use_package('rmarkdown')
 usethis::use_package('readr')
+usethis::use_package('Hmisc')
+usethis::use_package('data.table')
+usethis::use_package('qpdf')

@@ -1,5 +1,5 @@
 Package: muinther
-Title: Mutual Information Theory computation for numerous variables
+Title: Mutual Information Theory and correlation computation for numerous variables
 Version: 0.0.0.9000
 Authors@R: 
     c(person(given = "Edouard",
@@ -22,7 +22,7 @@ Authors@R:
            role = c("aut"),
            email = "philippe.pebay@ng-analytics.com",
            comment = c(ORCID = "0000-0002-2311-3775")))
-Description: R package to compute mutual information theory outputs for multiple variables association study. Final outputs include a table and a heatmap.
+Description: R package to compute Pearson correlation and mutual information theory outputs for multiple variables association study. Final outputs include a Pearson contingence heatmap, a theory information entropy outputs table and a theory information entropy heatmap.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
@@ -39,4 +39,5 @@ Imports:
     Hmisc,
     data.table,
     rmarkdown,
-    qpdf
+    qpdf,
+    scales

@@ -2,8 +2,7 @@
 % Please edit documentation in R/loop.R
 \name{loop}
 \alias{loop}
-\title{Loop for computate all entropy metrics outputs
-Contingence table of normalized mutual information theory coefficients}
+\title{Loop to computate all entropy metrics outputs}
 \usage{
 loop(x, fn, m, n)
 }
@@ -17,6 +16,8 @@ loop(x, fn, m, n)
 \item{n}{is the studied variables number}
 }
 \description{
-Loop for computate all entropy metrics outputs
-Contingence table of normalized mutual information theory coefficients
+Table of mutual information theory coefficients for variables association study. Computated outputs gather: Computed marginal EPMF of X, Computed marginal EPMF of Y, Chi2, Chi2 p-value, Information entropy of X, Information entropy of Y, Joint information entropy of X and Y, Conditional information entropy of Y given X, Conditional information entropy of X given Y, Mutual information of X and Y, Normalized mutual information of X and Y.
+}
+\references{
+Shannon, C. A mathematical theory of communication. Bell Labs Tech. J. 27, 379–423, DOI: 10.1002/j.1538-7305.1948.tb01338.x (1948).
 }

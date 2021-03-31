@@ -1,5 +1,7 @@
-#' Loop for computate all Pearson correlation outputs
-#' Contingence table of Pearson coefficients
+#' @title Pearson correlation outputs computation
+#' @description Contingence table heatmap of Pearson coefficients and p-values. Studied variables can be binary or quantitative.Concerning Pearson correlation, it is a commonly formulated criticism that one may not establish a linear correlation between a series of quantitative variables and another one of qualitative variables . However, this concern is misguided in the case of dichotomous variables (i.e., taking binary values), for this correlation can be legitimately established using the point biserial correlation coefficient.
+#' @references 1/ Lev, J. The point biserial coefficient of correlation. Ann. Math. Stat. 20, DOI: 10.1214/aoms/1177730103 (1949). 2/ Tate, R. Correlation between a discrete and a continuous variable. point-biserial correlation. The Annals Math. Stat. 25,DOI: 10.1214/aoms/1177728730 (1954) 3/ Kornbrot, D. Point biserial correlation. In Encyclopedia of Statistics in Behavioral Science, DOI: 10.1002/0470013192.bsa485 (American Cancer Society, 2005)
+#
 #' @param x is the source data csv file
 #'
 #' @import Hmisc
@@ -18,6 +20,23 @@ pearsontable <- function(x){
     data.table::melt(data.table::as.data.table(i, keep.rownames = "var1"), id.vars = "var1", variable.name = "var2")
   })
   cor_vals <- merge(cor_vals[[1]], cor_vals[[2]], by = c("var1", "var2"), suffix = c("_r", "_p"))
+
+  ggplot2::theme_set(
+    ggplot2::theme_light(base_size = 11) +
+      ggplot2::theme(
+        plot.title = ggtext::element_markdown(),
+        plot.title.position = "plot",
+        plot.subtitle = ggtext::element_markdown(face = "italic", size = ggplot2::rel(0.8)),
+        plot.caption = ggtext::element_markdown(face = "italic", size = ggplot2::rel(0.65)),
+        plot.caption.position = "plot",
+        axis.text.x = ggtext::element_markdown(),
+        axis.text.x.top = ggtext::element_markdown(),
+        axis.text.y = ggtext::element_markdown(),
+        legend.box.just = "left",
+        legend.key.size = ggplot2::unit(0.5, "lines"),
+        legend.text = ggplot2::element_text(size = ggplot2::rel(0.5))
+      )
+  )
 
   ggplot2::ggplot(
     data = cor_vals,

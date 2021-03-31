@@ -1,10 +1,12 @@
-#' Contingence table heatmap
-#' Contingence table of normalized mutual information theory coefficients
-#' @param z is the entropy metrics outputs matrix file
+#' @title  Contingence table heatmap
+#'
+#' @description Contingence table heatmap of normalized mutual information theory coefficients with the Chi2 p-value. Studied variables can be binary or quantitative.
+#' @param z is the entropy metrics outputs (computated previously with the loop function) csv file with its path.
 #'
 #' @import ggtext
 #' @import ggplot2
 #' @import readr
+#'
 #' @export
 
 heatmap2 <- function(z){

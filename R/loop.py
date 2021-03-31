@@ -16,7 +16,7 @@ def loopy(fn,m,n):
           'Chi2',
           'Chi2 p-value',
           'Information entropy of X',
-          'information entropy of Y',
+          'Information entropy of Y',
           'Joint information entropy of X and Y ',
           'Conditional information entropy of Y given X',
           'Conditional information entropy of X given Y',

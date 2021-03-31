@@ -2,15 +2,13 @@
 % Please edit documentation in R/heatmap2.R
 \name{heatmap2}
 \alias{heatmap2}
-\title{Contingence table heatmap
-Contingence table of normalized mutual information theory coefficients}
+\title{Contingence table heatmap}
 \usage{
 heatmap2(z)
 }
 \arguments{
-\item{z}{is the entropy metrics outputs matrix file}
+\item{z}{is the entropy metrics outputs (computated previously with the loop function) csv file with its path.}
 }
 \description{
-Contingence table heatmap
-Contingence table of normalized mutual information theory coefficients
+Contingence table heatmap of normalized mutual information theory coefficients with the Chi2 p-value. Studied variables can be binary or quantitative.
 }

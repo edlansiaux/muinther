@@ -13,13 +13,13 @@ library(muinther)
 ```
 #Pearson contingence table
 ```{r}
-pearsontable("I:/muinther/R/muinther/data/docs_phenotype_file_1.csv")
+pearsontable(docs_phenotype_file_1)
 ```
 # Entropy outputs computation on a csv file
 ```{r}
-loop('I:/muinther/R','I:/muinther/R/muinther/data/docs_phenotype_file_1.csv',1,7)
+loop('I:/muinther/R/muinther/docs_phenotype_file_1.csv',1,7)
 ```
 #Heatmap output
 ```{r}
-heatmap2("I:/muinther/R/muinther/data/entropy_outputs.csv")
+heatmap2(entropy_outputs)
 ```

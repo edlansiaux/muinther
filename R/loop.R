@@ -1,17 +1,16 @@
 #' @title Loop to computate all entropy metrics outputs
 #' @description Table of mutual information theory coefficients for variables association study. Computated outputs gather: Computed marginal EPMF of X, Computed marginal EPMF of Y, Chi2, Chi2 p-value, Information entropy of X, Information entropy of Y, Joint information entropy of X and Y, Conditional information entropy of Y given X, Conditional information entropy of X given Y, Mutual information of X and Y, Normalized mutual information of X and Y.
 #' @references Shannon, C. A mathematical theory of communication. Bell Labs Tech. J. 27, 379–423, DOI: 10.1002/j.1538-7305.1948.tb01338.x (1948).
-#' @param x is the working directory
 #' @param fn is the path to source data csv file
 #' @param m is the first studied X variable column number
 #' @param n is the studied variables number
+#' @examples loop('I:/muinther/R/muinther/docs_phenotype_file_1.csv',1,7)
 #'
 #' @import reticulate
 #' @export
 
-loop <- function(x,fn,m,n){
+loop <- function(fn,m,n){
   os <- reticulate::import("os")
-  os$chdir(x)
   reticulate::source_python('I:/muinther/R/muinther/R/loop.py')
   loopy(fn,m,n)
 }

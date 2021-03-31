@@ -7,8 +7,11 @@
 heatmap2(z)
 }
 \arguments{
-\item{z}{is the entropy metrics outputs (computated previously with the loop function) csv file with its path.}
+\item{z}{is the entropy metrics outputs (computated previously with the loop function) file}
 }
 \description{
 Contingence table heatmap of normalized mutual information theory coefficients with the Chi2 p-value. Studied variables can be binary or quantitative.
+}
+\examples{
+heatmap2(entropy_outputs)
 }

@@ -17,7 +17,7 @@ pearsontable("I:/muinther/R/muinther/docs_phenotype_file_1.csv")
 ```
 # Entropy outputs computation on a csv file
 ```{r}
-loop("I:/muinther/R")
+loop('I:/muinther/R','I:/muinther/R/muinther/docs_phenotype_file_1.csv',1,7)
 ```
 #Heatmap output
 ```{r}

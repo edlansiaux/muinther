@@ -1,21 +1,16 @@
 #' Loop for computate all entropy metrics outputs
 #' Contingence table of normalized mutual information theory coefficients
 #' @param x is the working directory
+#' @param fn is the path to source data csv file
+#' @param m is the first studied X variable column number
+#' @param n is the studied variables number
 #'
 #' @import reticulate
 #' @export
 
-loop <- function(x){
-  sys <- reticulate::import("sys")
-  codecs <- reticulate::import("codecs")
+loop <- function(x,fn,m,n){
   os <- reticulate::import("os")
-  getopt <- reticulate::import("getopt")
-  csv <- reticulate::import("csv")
-  math <- reticulate::import("math")
-  np <- reticulate::import("numpy")
-  ss <- reticulate::import("scipy.stats")
-
   os$chdir(x)
   reticulate::source_python('I:/muinther/R/muinther/R/loop.py')
-  }
-
+  loopy(fn,m,n)
+}

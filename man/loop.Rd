@@ -5,10 +5,16 @@
 \title{Loop for computate all entropy metrics outputs
 Contingence table of normalized mutual information theory coefficients}
 \usage{
-loop(x)
+loop(x, fn, m, n)
 }
 \arguments{
 \item{x}{is the working directory}
+
+\item{fn}{is the path to source data csv file}
+
+\item{m}{is the first studied X variable column number}
+
+\item{n}{is the studied variables number}
 }
 \description{
 Loop for computate all entropy metrics outputs

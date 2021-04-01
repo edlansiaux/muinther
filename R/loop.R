@@ -13,4 +13,8 @@ loop <- function(fn,m,n){
   os <- reticulate::import("os")
   reticulate::source_python('I:/muinther/R/muinther/R/loop.py')
   loopy(fn,m,n)
+  fn <- as.data.frame(readr::read_csv(fn))
+
+  entropy_outputs<- as.data.frame(readr::read_csv('entropy_outputs.csv'))
+
 }

@@ -13,8 +13,16 @@ loop <- function(fn,m,n){
   os <- reticulate::import("os")
   reticulate::source_python('I:/muinther/R/muinther/R/loop.py')
   loopy(fn,m,n)
+
   fn <- as.data.frame(readr::read_csv(fn))
+  var_1 <- colnames(fn)
+  entropy_outputs <- as.data.frame(readr::read_csv('entropy_outputs.csv'))
+  for (i in 0:(length(fn)-1)) {
+    y = i + 1
+    entropy_outputs[, 1:2] <- replace(entropy_outputs[, 1:2],entropy_outputs[, 1:2]==i,var_1[y])
+  }
 
-  entropy_outputs<- as.data.frame(readr::read_csv('entropy_outputs.csv'))
-
+  write.csv(entropy_outputs, 'entropy_outputs.csv', row.names = FALSE)
 }
+
+loop('I:/muinther/R/muinther/docs_phenotype_file_1.csv',1,7)

@@ -17,7 +17,7 @@ loop <- function(fn,m,n){
   var_1 <- colnames(fn)
   entropy_outputs <- as.data.frame(readr::read_csv('I:/muinther/R/muinther/vignettes/entropy_outputs.csv'))
   for (i in 0:(length(fn)-1)) {
-    y = i + 2
+    y = i + 1 + m
     entropy_outputs[, 1:2] <- replace(entropy_outputs[, 1:2],entropy_outputs[, 1:2]==i,var_1[y])
   }
 

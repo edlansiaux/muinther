@@ -7,7 +7,7 @@
 loop(fn, m, n)
 }
 \arguments{
-\item{fn}{is the path to source data csv file with variables studied beginning on the second column}
+\item{fn}{is the path to source data csv file}
 
 \item{m}{is the first studied X variable column number}
 

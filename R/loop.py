@@ -414,7 +414,7 @@ def loopy(fn,m,n):
           D = D + 1
      
       Z = Z + 1
-      if D == A  :
+      if D == A :
           W = Z
           D = Z - B
       C = C + 1

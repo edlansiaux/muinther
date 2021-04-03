@@ -56,5 +56,5 @@ heatmap2 <- function(z){
       caption = "Values denoted in tiles correspond to p-value of Chi2 test."
     ) +
     ggplot2::theme_minimal() +
-    ggplot2::theme(plot.caption = ggtext::element_markdown(size = ggplot2::rel(0.5)))
+    ggplot2::theme(plot.caption = ggtext::element_markdown(size = ggplot2::rel(0.5)), axis.text.x = ggtext::element_markdown(angle = ggplot2::rel(90)))
 }

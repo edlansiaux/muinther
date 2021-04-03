@@ -1,6 +1,6 @@
 Package: muinther
 Title: Mutual Information Theory and correlation computation for numerous variables
-Version: 1.0.1.0000
+Version: 1.0.2.0000
 Authors@R: 
     c(person(given = "Edouard",
            family = "Lansiaux",

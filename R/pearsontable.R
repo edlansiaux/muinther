@@ -54,7 +54,7 @@ pearsontable <- function(x){
       colour = "white",
       fill = NA,
       label.colour = NA,
-      size = 2,
+      size = 1.5,
       na.rm = TRUE
     ) +
     ggplot2::scale_fill_viridis_c(na.value = "white", name = "Pearson's\nCorrelation") +
@@ -65,3 +65,4 @@ pearsontable <- function(x){
     ggplot2::theme_minimal() +
     ggplot2::theme(plot.caption = ggtext::element_markdown(size = ggplot2::rel(0.5)), axis.text.x = ggtext::element_markdown(angle = ggplot2::rel(90)))
 }
+

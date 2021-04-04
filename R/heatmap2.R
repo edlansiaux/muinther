@@ -47,7 +47,7 @@ heatmap2 <- function(z){
       colour = "white",
       fill = NA,
       label.colour = NA,
-      size = 2,
+      size = 1.5,
       na.rm = TRUE
     ) +
     ggplot2::scale_fill_viridis_c(na.value = "white", name = "Mutual\nInformation\nTheory") +

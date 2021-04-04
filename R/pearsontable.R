@@ -34,7 +34,7 @@ pearsontable <- function(x){
         axis.text.y = ggtext::element_markdown(),
         legend.box.just = "left",
         legend.key.size = ggplot2::unit(0.5, "lines"),
-        legend.text = ggplot2::element_text(size = ggplot2::rel(0.5))
+        legend.text = ggplot2::element_text(size = ggplot2::rel(1))
       )
   )
 
@@ -54,7 +54,7 @@ pearsontable <- function(x){
       colour = "white",
       fill = NA,
       label.colour = NA,
-      size = 2.5,
+      size = 2,
       na.rm = TRUE
     ) +
     ggplot2::scale_fill_viridis_c(na.value = "white", name = "Pearson's\nCorrelation") +

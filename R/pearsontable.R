@@ -3,7 +3,7 @@
 #' @references 1/ Lev, J. The point biserial coefficient of correlation. Ann. Math. Stat. 20, DOI: 10.1214/aoms/1177730103 (1949). 2/ Tate, R. Correlation between a discrete and a continuous variable. point-biserial correlation. The Annals Math. Stat. 25,DOI: 10.1214/aoms/1177728730 (1954) 3/ Kornbrot, D. Point biserial correlation. In Encyclopedia of Statistics in Behavioral Science, DOI: 10.1002/0470013192.bsa485 (American Cancer Society, 2005)
 #' @examples pearsontable(docs_phenotype_file_1)
 #'
-#' @param x is the source data file
+#' @param x is the source data matrix/data frame
 #'
 #' @import Hmisc
 #' @import data.table

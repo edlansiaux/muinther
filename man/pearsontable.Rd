@@ -7,7 +7,7 @@
 pearsontable(x)
 }
 \arguments{
-\item{x}{is the source data file}
+\item{x}{is the source data matrix/data frame}
 }
 \description{
 Contingence table heatmap of Pearson coefficients and p-values. Studied variables can be binary or quantitative.Concerning Pearson correlation, it is a commonly formulated criticism that one may not establish a linear correlation between a series of quantitative variables and another one of qualitative variables . However, this concern is misguided in the case of dichotomous variables (i.e., taking binary values), for this correlation can be legitimately established using the point biserial correlation coefficient.

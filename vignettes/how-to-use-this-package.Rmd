@@ -11,7 +11,7 @@ vignette: >
 ```{r setup}
 library(muinther)
 ```
-#Pearson contingence table
+# Pearson contingence table
 ```{r}
 pearsontable(docs_phenotype_file_1)
 ```
@@ -19,7 +19,7 @@ pearsontable(docs_phenotype_file_1)
 ```{r}
 loop('I:/muinther/R/muinther/docs_phenotype_file_1.csv',1,7)
 ```
-#Heatmap output
+# Heatmap output
 ```{r}
 heatmap2(entropy_outputs)
 ```

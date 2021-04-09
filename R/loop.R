@@ -14,7 +14,7 @@ loop <- function(fn,m,n){
   reticulate::source_python('I:/muinther/R/muinther/R/loop.py')
   loopy(fn,m,n)
   fn1 <- as.data.frame(readr::read_csv(fn))
-  fn1 <- fn1[, m:(m+n)]
+  fn1 <- fn1[, (m+1):(m+n)]
   var_1 <- colnames(fn1)
   entropy_outputs <- as.data.frame(readr::read_csv('entropy_outputs.csv'))
   for (i in 0:(n-1)) {
@@ -23,6 +23,6 @@ loop <- function(fn,m,n){
   }
 
   write.csv(entropy_outputs, 'entropy_outputs.csv', row.names = FALSE)
-  print(entropy_outputs)
+  View(entropy_outputs)
 }
 

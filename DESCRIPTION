@@ -5,7 +5,7 @@ Authors@R:
     c(person(given = "Edouard",
            family = "Lansiaux",
            role = c("aut", "cre"),
-           email = "edouard.lansiaux.etu@univ-lille.com",
+           email = "edouard.lansiaux.etu@univ-lille.fr",
            comment = c(ORCID = "0000-0002-4342-8707")),
     person(given = "Jean-Luc",
            family = "Caut",
@@ -25,7 +25,7 @@ Authors@R:
 Maintainer@R: person(given = "Edouard",
            family = "Lansiaux",
            role = c("aut", "cre"),
-           email = "edouard.lansiaux.etu@univ-lille.com",
+           email = "edouard.lansiaux.etu@univ-lille.fr",
            comment = c(ORCID = "0000-0002-4342-8707"))
 Description: R package to compute Pearson correlation and mutual information theory outputs for multiple variables association study. Final outputs include a Pearson contingence heatmap, a theory information entropy outputs table and a theory information entropy heatmap.
 License: GPL-3

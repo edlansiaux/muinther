@@ -4,7 +4,7 @@
 #' @param fn is the path to source data csv file
 #' @param m is the first studied X variable column number
 #' @param n is the studied variables number
-#' @examples loop('I:/muinther/R/muinther/docs_phenotype_file_1.csv',1,7)
+#' @examples loop('I:/muinther/R/muinther/data/docs_phenotype_file_1.csv',1,8)
 #'
 #' @import reticulate
 #' @export
@@ -23,6 +23,6 @@ loop <- function(fn,m,n){
   }
 
   write.csv(entropy_outputs, 'entropy_outputs.csv', row.names = FALSE)
-  View(entropy_outputs)
+  print(entropy_outputs)
 }
 

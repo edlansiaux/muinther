@@ -17,10 +17,9 @@ pearsontable(docs_phenotype_file_1)
 ```
 # Entropy outputs computation on a csv file
 ```{r}
-loop('I:/muinther/R/muinther/docs_phenotype_file_1.csv',1,8)
+loop('I:/muinther/R/muinther/data/docs_phenotype_file_1.csv',1,8)
 ```
 # Heatmap output
 ```{r}
-entropy_outputs <- readr::read_csv('I:/muinther/R/muinther/entropy_outputs.csv')
 heatmap2(entropy_outputs)
 ```

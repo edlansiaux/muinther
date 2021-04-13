@@ -31,7 +31,7 @@ def loopy(fn,m,n):
     writer.writerow(header_row)
   w.close()
   
-  G = str(fn) #source data path
+  G = str('input.csv') #source data path
   Z = int(m) #First studied X variable column number
   W = Z #First studied Y variable column number
   A = int(n) #Number of studied variables

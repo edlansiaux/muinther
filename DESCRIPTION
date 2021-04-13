@@ -22,7 +22,7 @@ Authors@R:
            role = c("aut"),
            email = "philippe.pebay@ng-analytics.com",
            comment = c(ORCID = "0000-0002-2311-3775")))
-Maintainer: person(given = "Edouard",
+Maintainer@R: person(given = "Edouard",
            family = "Lansiaux",
            role = c("aut", "cre"),
            email = "edouard.lansiaux.etu@univ-lille.fr",

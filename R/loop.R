@@ -4,7 +4,7 @@
 #' @param input is the source data frame
 #' @param m is the first studied X variable column number
 #' @param n is the studied variables number
-#' @examples loop('docs_phenotype_file_1',1,8)
+#' @examples loop(docs_phenotype_file_1,1,8)
 #'
 #' @import reticulate
 #' @export
@@ -12,7 +12,7 @@
 loop <- function(input,m,n){
   write.csv(input,'input.csv')
   os <- reticulate::import("os")
-  reticulate::source_python('I:/muinther/R/muinther/R/loop.py')
+  reticulate::source_python('loop.py')
   loopy('input.csv',m,n)
   fn1 <- as.data.frame(readr::read_csv('input.csv'))
   fn1 <- fn1[, (m+1):(m+n)]
@@ -22,7 +22,6 @@ loop <- function(input,m,n){
     y = i + m
     entropy_outputs[, 1:2] <- replace(entropy_outputs[, 1:2],entropy_outputs[, 1:2]==i,var_1[y])
   }
-
   write.csv(entropy_outputs, 'entropy_outputs.csv', row.names = FALSE)
   print(entropy_outputs)
 }

@@ -10,7 +10,7 @@ vignette: >
 ```{r setup}
 library(muinther)
 ```
-# Pearson contingence table
+# Pearson correlation heatmap
 ```{r}
 pearsontable(docs_phenotype_file_1)
 ```
@@ -18,7 +18,7 @@ pearsontable(docs_phenotype_file_1)
 ```{r}
 loop(docs_phenotype_file_1,1,8)
 ```
-# Heatmap output
+# Shannon entropy heatmap
 ```{r}
 heatmap2(entropy_outputs)
 ```

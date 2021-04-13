@@ -2,7 +2,7 @@
 % Please edit documentation in R/heatmap2.R
 \name{heatmap2}
 \alias{heatmap2}
-\title{Contingence table heatmap}
+\title{Shannon entropy heatmap}
 \usage{
 heatmap2(z)
 }

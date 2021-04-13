@@ -2,7 +2,7 @@
 % Please edit documentation in R/pearsontable.R
 \name{pearsontable}
 \alias{pearsontable}
-\title{Pearson correlation outputs computation}
+\title{Pearson correlation heatmap}
 \usage{
 pearsontable(x)
 }

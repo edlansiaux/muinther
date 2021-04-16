@@ -1,5 +1,6 @@
 #' @title Pearson correlation heatmap
 #' @description Contingence table heatmap of Pearson coefficients and p-values. Studied variables can be binary or quantitative.Concerning Pearson correlation, it is a commonly formulated criticism that one may not establish a linear correlation between a series of quantitative variables and another one of qualitative variables . However, this concern is misguided in the case of dichotomous variables (i.e., taking binary values), for this correlation can be legitimately established using the point biserial correlation coefficient.
+#' @author Joachim Forget, Jean-Luc Caut
 #' @references 1/ Lev, J. The point biserial coefficient of correlation. Ann. Math. Stat. 20, DOI: 10.1214/aoms/1177730103 (1949). 2/ Tate, R. Correlation between a discrete and a continuous variable. point-biserial correlation. The Annals Math. Stat. 25,DOI: 10.1214/aoms/1177728730 (1954) 3/ Kornbrot, D. Point biserial correlation. In Encyclopedia of Statistics in Behavioral Science, DOI: 10.1002/0470013192.bsa485 (American Cancer Society, 2005)
 #' @examples pearsontable(docs_phenotype_file_1)
 #'
@@ -38,6 +39,7 @@ pearsontable <- function(x){
       )
   )
 
+  names(z) <- c("var1", "var2", "value_p", "value_r")
   ggplot2::ggplot(
     data = cor_vals,
     mapping = ggplot2::aes(x = var2, y = var1, fill = value_r, text = value_p)

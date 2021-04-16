@@ -1,24 +1,42 @@
 ---
-title: "how-to-use-this-package"
-output: rmarkdown::html_vignette
-vignette: >
-  %\VignetteIndexEntry{how-to-use-this-package}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+title: '*muinther* package: Quick-start guide'
+author: "Edouard Lansiaux, Jean-Luc Caut, Joachim Forget, Philippe Pierre Pébaÿ"
+output:
+  rmarkdown::html_vignette: default
+  rmarkdown::pdf_vignette: default
+package: muinther
+vignette: |
+  %\VignetteIndexEntry{muinther} %\VignetteEngine{knitr::rmarkdown} %\VignetteEncoding{UTF-8}
 ---
 
-```{r setup}
+```{r, fig.align = "center", out.width = "50%", echo=FALSE}
+knitr::include_graphics("muinther.png")
+options(rmarkdown.html_vignette.check_title = FALSE)
+```
+
+
+*muinther* is a package to perform analysis concerning correlation and association between numerous variables (e.g., binary and/or quantitative variables).The package implements two distinct strategies to do that:
+1) Pearson's correlation computation and 2) Shannon mutual information method. For both strategies function provide a contingence heatmap matrix with two values for each box : one (p-value of association/correlation test) on a numeric scale and the other (association/correlation coefficient on a color scale. This contingence heatmap matrix was built thanks to *ggplot2* package.
+
+
+The methods implemented in this package are described in detail in the following publications.
+
+1. Edouard Lansiaux, Jean-Luc Caut, Joachim Forget et al. Assessing the efficiency of COVID-19 NPIs in France: a retrospective study using a novel methodology, 13 April 2021, PREPRINT (Version 1) available at Research Square [https://doi.org/10.21203/rs.3.rs-321360/v1]
+
+Below, we provide a quick-start guide using a subset of RNA-seq data to illustrate the functionalities of the *muinther* package.
+
+# Quick start (tl;dr)
+
+A standard *muinther* analysis takes the following form, where `docs_phenotype_file_1` represents a matrix or data.frame of (of dimension *d* x *n* for *d* observations and *n* studied variables).
+
+
+
+Mutual information theory results (computed thanks to `loop()`), exported in the form of a `entropy_outputs` csv object, can be easily be examined using `heatmap()` after csv file transformation into dataframe/matrix (see below and the User's Guide for example).
+
+```{r, eval=FALSE}
 library(muinther)
-```
-# Pearson correlation heatmap
-```{r}
 pearsontable(docs_phenotype_file_1)
-```
-# Entropy outputs computation on a csv file
-```{r}
 loop(docs_phenotype_file_1,1,8)
-```
-# Shannon entropy heatmap
-```{r}
+entropy_outputs <- 
 heatmap2(entropy_outputs)
 ```

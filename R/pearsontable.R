@@ -39,7 +39,7 @@ pearsontable <- function(x){
       )
   )
 
-  names(z) <- c("var1", "var2", "value_p", "value_r")
+  names(x) <- c("var1", "var2", "value_p", "value_r")
   ggplot2::ggplot(
     data = cor_vals,
     mapping = ggplot2::aes(x = var2, y = var1, fill = value_r, text = value_p)

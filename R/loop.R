@@ -6,14 +6,22 @@
 #' @param m is the first studied X variable column number
 #' @param n is the studied variables number
 #'
-#' @example loop(docs_phenotype_file_1,1,8)
+#' @example inst/examples/mutual_information_example.R
 #' @import reticulate
 #' @export
 
 loop <- function(input,m,n){
   write.csv(input,'input.csv')
   os <- reticulate::import("os")
-  reticulate::source_python('loop.py')
+  sys <- reticulate::import("sys")
+  codecs<- reticulate::import("codecs")
+  getopt <- reticulate::import("getopt")
+  csv <- reticulate::import("csv")
+  math <- reticulate::import("math")
+  np <- reticulate::import("numpy")
+  ss <- reticulate::import("scipy.stats")
+
+  reticulate::source_python(system.file("python","loop.py", package = "muinther"))
   loopy('input.csv',m,n)
   fn1 <- as.data.frame(readr::read_csv('input.csv'))
   fn1 <- fn1[, (m+1):(m+n)]

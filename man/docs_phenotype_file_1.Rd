@@ -4,7 +4,7 @@
 \title{Source data
 %%   ~~ data name/kind ... ~~
 }
-\description{S ource data file extracted from a csv file
+\description{Source data file extracted from a csv file
 %%  ~~ A concise (1-5 lines) description of the dataset. ~~
 }
 \usage{data("docs_phenotype_file_1")}
@@ -33,5 +33,6 @@
 \examples{
 data(docs_phenotype_file_1)
 pearsontable(docs_phenotype_file_1)
+loop(docs_phenotype_file_1,1,8)
 }
 \keyword{datasets}

@@ -16,6 +16,17 @@ loop(input, m, n)
 \description{
 Table of mutual information theory coefficients for variables association study. Computated outputs gather: X variable name, Y variable name, X information entropy, Y information entropy, Computed marginal EPMF of X, Computed marginal EPMF of Y, Chi2, Chi2 p-value, Information entropy of X, Information entropy of Y, Joint information entropy of X and Y, Conditional information entropy of Y given X, Conditional information entropy of X given Y, Mutual information of X and Y, Normalized mutual information of X and Y.
 }
+\examples{
+## Entropy outputs coumputation and visualization
+### Computation
+loop(docs_phenotype_file_1,1,8)
+### Visualization on a heatmap
+entropy_outputs <- readr::read_csv('entropy_outputs.csv')
+heatmap2(entropy_outputs)
+}
 \references{
 Shannon, C. A mathematical theory of communication. Bell Labs Tech. J. 27, 379–423, DOI: 10.1002/j.1538-7305.1948.tb01338.x (1948).
+}
+\author{
+Edouard Lansiaux, Philippe Pierre Pébaÿ
 }

@@ -35,7 +35,4 @@
 \references{
 %%  ~~ possibly secondary sources and usages ~~
 }
-\examples{
-heatmap2(entropy_outputs)
-}
 \keyword{datasets}

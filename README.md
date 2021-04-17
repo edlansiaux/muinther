@@ -1,4 +1,4 @@
-muinther: relationship study between several variables
+*muinther*: relationship study between several variables
 ==
 
 Authors: Edouard Lansiaux, Jean-Luc Caut, Joachim Forget and Philippe Pierre Pébaÿ

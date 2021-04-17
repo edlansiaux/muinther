@@ -36,7 +36,7 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Suggests: 
     knitr
-SystemRequirements: Python 
+SystemRequirements: Python (>=3.8.5)
 VignetteBuilder: knitr
 Imports: 
     reticulate,

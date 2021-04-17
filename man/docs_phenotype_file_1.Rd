@@ -30,9 +30,4 @@
 \references{
 %%  ~~ possibly secondary sources and usages ~~
 }
-\examples{
-data(docs_phenotype_file_1)
-pearsontable(docs_phenotype_file_1)
-loop(docs_phenotype_file_1,1,8)
-}
 \keyword{datasets}

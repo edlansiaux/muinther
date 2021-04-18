@@ -26,13 +26,8 @@
     \item{\samp{Normalized mutual information of X and Y}}{a numeric vector}
   }
 }
-\details{
-%%  ~~ If necessary, more details than the __description__ above ~~
+
+\source{Output from the function loop() when `docs_phenotype_file_1` dataset was used
 }
-\source{
-%%  ~~ reference to a publication or URL from which the data were obtained ~~
-}
-\references{
-%%  ~~ possibly secondary sources and usages ~~
-}
+
 \keyword{datasets}

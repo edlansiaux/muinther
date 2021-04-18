@@ -12,14 +12,29 @@
 
 loop <- function(input,m,n){
   write.csv(input,'input.csv')
-  os <- reticulate::import("os")
-  sys <- reticulate::import("sys")
-  codecs<- reticulate::import("codecs")
-  getopt <- reticulate::import("getopt")
-  csv <- reticulate::import("csv")
-  math <- reticulate::import("math")
-  np <- reticulate::import("numpy")
-  ss <- reticulate::import("scipy.stats")
+
+  os <- NULL
+  sys <- NULL
+  codecs <- NULL
+  getopt <- NULL
+  csv <- NULL
+  math <- NULL
+  np <- NULL
+  ss <- NULL
+
+  .onLoad <- function(libname, muinther) {
+    # delay load modules (will only be loaded when accessed via $)
+    os <<- reticulate::import("os", delay_load = TRUE)
+    sys <<- reticulate::import("sys", delay_load = TRUE)
+    codecs <<- reticulate::import("codecs", delay_load = TRUE)
+    getopt <<- reticulate::import("getopt", delay_load = TRUE)
+    csv <<- reticulate::import("csv", delay_load = TRUE)
+    math <<- reticulate::import("math", delay_load = TRUE)
+    np <<- reticulate::import("numpy", delay_load = TRUE)
+    ss <<- reticulate::import("scipy.stats", delay_load = TRUE)
+  }
+
+
 
   reticulate::source_python(system.file("python","loop.py", package = "muinther"))
   loopy('input.csv',m,n)

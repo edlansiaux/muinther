@@ -22,7 +22,7 @@ loop <- function(input,m,n){
   np <- NULL
   ss <- NULL
 
-  .onLoad <- function(libname, muinther) {
+
     # delay load modules (will only be loaded when accessed via $)
     os <<- reticulate::import("os", delay_load = TRUE)
     sys <<- reticulate::import("sys", delay_load = TRUE)
@@ -32,8 +32,6 @@ loop <- function(input,m,n){
     math <<- reticulate::import("math", delay_load = TRUE)
     np <<- reticulate::import("numpy", delay_load = TRUE)
     ss <<- reticulate::import("scipy.stats", delay_load = TRUE)
-  }
-
 
 
   reticulate::source_python(system.file("python","loop.py", package = "muinther"))

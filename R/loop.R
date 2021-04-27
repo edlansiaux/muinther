@@ -33,7 +33,6 @@ loop <- function(input,m,n){
     np <<- reticulate::import("numpy", delay_load = TRUE)
     ss <<- reticulate::import("scipy.stats", delay_load = TRUE)
 
-
   reticulate::source_python(system.file("python","loop.py", package = "muinther"))
   loopy('input.csv',m,n)
   fn1 <- as.data.frame(readr::read_csv('input.csv'))

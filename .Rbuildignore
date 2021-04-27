@@ -3,3 +3,4 @@
 ^muinther\.Rproj$
 ^\.Rproj\.user$
 ^devtools_history\.R$
+^cran-comments\.md$

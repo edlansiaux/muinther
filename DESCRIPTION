@@ -35,7 +35,8 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Suggests: 
-    knitr
+    knitr,
+    testthat (>= 3.0.0)
 SystemRequirements: Python (>=3.8.5)
 VignetteBuilder: knitr
 Imports: 
@@ -48,3 +49,4 @@ Imports:
     rmarkdown,
     scales,
     AlphaPart
+Config/testthat/edition: 3

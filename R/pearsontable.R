@@ -10,17 +10,43 @@
 #' @import data.table
 #' @import ggplot2
 #' @import ggtext
+#' @import reshape2
 #' @export
 
 
 pearsontable <- function(x){
   data <- x
   cor_vals <- Hmisc::rcorr(as.matrix(data), type = "pearson")
-  cor_vals <- lapply(cor_vals[c("r", "P")], function(i) {
-    i[lower.tri(i)] <- NA
-    data.table::melt(data.table::as.data.table(i, keep.rownames = "var1"), id.vars = "var1", variable.name = "var2")
-  })
-  cor_vals <- merge(cor_vals[[1]], cor_vals[[2]], by = c("var1", "var2"), suffix = c("_r", "_p"))
+
+
+  get_lower_tri<-function(cor){
+    cor[upper.tri(cor)] <- NA
+    return(cor)
+  }
+
+  get_upper_tri <- function(cor){
+    cor[lower.tri(cor)]<- NA
+    return(cor)
+  }
+
+  reorder_cor <- function(cormat){
+    # Use correlation between variables as distance
+    dd <- as.dist((1-cormat)/2)
+    hc <- hclust(dd)
+    cormat <-cormat[hc$order, hc$order]
+  }
+
+  cor_r <- reorder_cor(cor_vals$r)
+  cor_P <- reorder_cor(cor_vals$P)
+
+  upper_r <- get_upper_tri(cor_r)
+  upper_p <- get_upper_tri(cor_P)
+
+  cor_v <- reshape2::melt(upper_r)
+  cor_p <- reshape2::melt(upper_p)
+  cor_p <- cor_p[,3]
+  cor <- cbind(cor_v,cor_p)
+  names(cor) <- c("var1", "var2", "value_r", "value_p")
 
   ggplot2::theme_set(
     ggplot2::theme_light(base_size = 11) +
@@ -39,10 +65,10 @@ pearsontable <- function(x){
       )
   )
 
-  names(x) <- c("var1", "var2", "value_p", "value_r")
+
   ggplot2::ggplot(
-    data = cor_vals,
-    mapping = ggplot2::aes(x = var2, y = var1, fill = value_r, text = value_p)
+    data = cor,
+    mapping = ggplot2::aes(x = var1, y = var2, fill = value_r, text = value_p)
   ) +
     ggplot2::geom_tile() +
     ggtext::geom_richtext(
@@ -59,12 +85,13 @@ pearsontable <- function(x){
       size = 1.5,
       na.rm = TRUE
     ) +
-    ggplot2::scale_fill_viridis_c(na.value = "white", name = "Pearson's\nCorrelation") +
+    ggplot2::scale_fill_viridis_c(na.value = "white", name = "Pearson\nCorrelation\n") +
     ggplot2::labs(
       x = NULL, y = NULL,
-      caption = "Values denoted in tiles correspond to p-value of correlation test."
+      caption = "Values denoted in tiles correspond to p-value of Pearson test."
     ) +
     ggplot2::theme_minimal() +
     ggplot2::theme(plot.caption = ggtext::element_markdown(size = ggplot2::rel(0.5)), axis.text.x = ggtext::element_markdown(angle = ggplot2::rel(90)))
 }
+
 

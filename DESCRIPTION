@@ -48,5 +48,6 @@ Imports:
     data.table,
     rmarkdown,
     scales,
+    reshape2,
     AlphaPart
 Config/testthat/edition: 3

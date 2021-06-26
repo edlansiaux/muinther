@@ -11,6 +11,7 @@
 heatmap2 <- function(z){
   z <- as.data.frame(z)
   z <- z[, - c(3,4,5,7,8,9,10,11,12)]
+
   names(z) <- c("var1", "var2", "value_p", "value_r")
 
   ggplot2::theme_set(
@@ -40,7 +41,7 @@ heatmap2 <- function(z){
       mapping = ggplot2::aes(
         label = gsub(
           pattern = "(.*)e([-+]*)0*(.*)",
-          replacement = "\\1<br>&times;<br>10<sup>\\2\\3</sup>",
+          replacement = "10<sup>\\2\\3</sup>",
           x = scales::scientific(.data[["value_p"]], digits = 3)
         )
       ),

@@ -49,7 +49,7 @@ pearsontable <- function(x){
   names(cor) <- c("var1", "var2", "value_r", "value_p")
 
   ggplot2::theme_set(
-    ggplot2::theme_light(base_size = 11) +
+    ggplot2::theme_light(base_size = 40) +
       ggplot2::theme(
         plot.title = ggtext::element_markdown(),
         plot.title.position = "plot",
@@ -75,14 +75,14 @@ pearsontable <- function(x){
       mapping = ggplot2::aes(
         label = gsub(
           pattern = "(.*)e([-+]*)0*(.*)",
-          replacement = "\\1<br>&times;<br>10<sup>\\2\\3</sup>",
+          replacement = "10<sup>\\2\\3</sup>",
           x = scales::scientific(.data[["value_p"]], digits = 3)
         )
       ),
       colour = "white",
       fill = NA,
       label.colour = NA,
-      size = 1.5,
+      size = 2,
       na.rm = TRUE
     ) +
     ggplot2::scale_fill_viridis_c(na.value = "white", name = "Pearson\nCorrelation\n") +
@@ -92,5 +92,5 @@ pearsontable <- function(x){
     ) +
     ggplot2::theme_minimal() +
     ggplot2::theme(plot.caption = ggtext::element_markdown(size = ggplot2::rel(0.5)), axis.text.x = ggtext::element_markdown(angle = ggplot2::rel(90)))
-}
+  }
 

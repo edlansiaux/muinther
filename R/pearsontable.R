@@ -11,6 +11,7 @@
 #' @import ggplot2
 #' @import ggtext
 #' @import reshape2
+#' @import formattable
 #' @export
 
 
@@ -66,7 +67,7 @@ pearsontable <- function(x){
   )
 
 
-  ggplot2::ggplot(
+  plot <- ggplot2::ggplot(
     data = cor,
     mapping = ggplot2::aes(x = var1, y = var2, fill = value_r, text = value_p)
   ) +
@@ -92,5 +93,8 @@ pearsontable <- function(x){
     ) +
     ggplot2::theme_minimal() +
     ggplot2::theme(plot.caption = ggtext::element_markdown(size = ggplot2::rel(0.5)), axis.text.x = ggtext::element_markdown(angle = ggplot2::rel(90)))
+  table <- formattable::formattable(cor)
+  results <- list(plot,table)
+  return(results)
   }
 

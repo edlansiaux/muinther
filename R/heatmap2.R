@@ -5,12 +5,78 @@
 #' @example inst/examples/mutual_information_example.R
 #' @import ggtext
 #' @import ggplot2
+#' @import reshape2
 #'
 #' @export
 
 heatmap2 <- function(z){
   z <- as.data.frame(z)
   z <- z[, - c(3,4,5,7,8,9,10,11,12)]
+  z1 <- z[,1:3]
+  z2 <- cbind(z[,1:2],z[,4])
+  z1 <- reshape2::dcast(z1, X.studied.variable~Y.studied.variable,value.var="Chi2.p.value", fill = NA)
+  z2 <- reshape2::dcast(z2, X.studied.variable~Y.studied.variable,value.var="z[, 4]", fill = NA)
+
+  names1 <- z1[,1]
+  z1 <- z1[,-1]
+  z4 <- t(z1)
+
+  for (i in 1:ncol(z1)) {
+    c <- as.vector(z1[,i])
+    d <- as.vector(z4[,i])
+    for (y in 1:ncol(z1)) {
+      if (is.na(c[y])) {
+        c <- replace(c,y,d[y])
+      }
+    }
+    names1 <- cbind(names1,c)
+  }
+
+
+  names2 <- z2[,1]
+  z2 <- z2[,-1]
+  z3 <- t(z2)
+
+  for (i in 1:ncol(z2)) {
+    c <- as.vector(z2[,i])
+    d <- as.vector(z3[,i])
+    for (y in 1:ncol(z2)) {
+      if (is.na(c[y])) {
+        c <- replace(c,y,d[y])
+      }
+    }
+    names2 <- cbind(names2,c)
+  }
+
+  get_lower_tri<-function(cormat){
+    cormat[upper.tri(cormat)] <- NA
+    return(cormat)
+  }
+
+  get_upper_tri <- function(cormat){
+    cormat[lower.tri(cormat, diag = FALSE)]<- NA
+    return(cormat)
+  }
+
+  row.names(names1)<- names1[,1]
+  names1<-names1[,-1]
+  colnames(names1)<- rownames(names1)
+  row.names(names2) <- names2[,1]
+  names2<-names2[,-1]
+  colnames(names2)<- rownames(names2)
+
+  upper_triz1 <- get_upper_tri(names1)
+  upper_triz2 <- get_upper_tri(names2)
+
+  z1 <- reshape2::melt(upper_triz1, na.rm = TRUE)
+  z2 <- reshape2::melt(upper_triz2, na.rm = TRUE)
+
+  z2 <- z2[,3]
+  z <- cbind(z1,z2)
+
+  r<-as.numeric(z[,4])
+  p<-as.numeric(z[,3])
+  z<-cbind(z[,1:2],p,r)
 
   names(z) <- c("var1", "var2", "value_p", "value_r")
 

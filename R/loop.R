@@ -8,10 +8,11 @@
 #'
 #' @example inst/examples/mutual_information_example.R
 #' @import reticulate
+#' @import formattable
 #' @export
 
 loop <- function(input,m,n){
-  write.csv(input,'input.csv')
+  write.csv(input,'inst/temp/input.csv')
 
   os <- NULL
   sys <- NULL
@@ -33,18 +34,17 @@ loop <- function(input,m,n){
     np <<- reticulate::import("numpy", delay_load = TRUE)
     ss <<- reticulate::import("scipy.stats", delay_load = TRUE)
 
-  reticulate::source_python(system.file("python","loop.py", package = "muinther"))
-  loopy('input.csv',m,n)
-  fn1 <- as.data.frame(readr::read_csv('input.csv'))
+  reticulate::source_python('I:/muinther/R/muinther/inst/python/loop.py')
+  loopy('inst/temp/input.csv',m,n)
+  fn1 <- input
   fn1 <- fn1[, (m+1):(m+n)]
   var_1 <- colnames(fn1)
-  entropy_outputs <- as.data.frame(readr::read_csv('entropy_outputs.csv'))
+  entropy_outputs <- as.data.frame(readr::read_csv('inst/temp/entropy_outputs.csv'))
   for (i in 0:(n-1)) {
     y = i + m
     entropy_outputs[, 1:2] <- replace(entropy_outputs[, 1:2],entropy_outputs[, 1:2]==i,var_1[y])
   }
-  write.csv(entropy_outputs, 'entropy_outputs.csv', row.names = FALSE)
-  print(entropy_outputs)
+  write.csv(entropy_outputs, 'inst/temp/entropy_outputs.csv', row.names = FALSE)
   entropy_outputs <- as.data.frame(entropy_outputs)
-
+  formattable::formattable(entropy_outputs)
 }

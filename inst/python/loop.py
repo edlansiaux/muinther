@@ -23,14 +23,14 @@ def loopy(fn,m,n):
           'Mutual information of X and Y',
           'Normalized mutual information of X and Y'
       ]
-  w = open('entropy_outputs.csv', 'w+', newline = '') 
+  w = open('inst/temp/entropy_outputs.csv', 'w+', newline = '') 
   
   with w:
     writer = csv.writer(w)
     writer.writerow(header_row)
   w.close()
   
-  G = str('input.csv') #source data path
+  G = str('inst/temp/input.csv') #source data path
   Z = int(m) #First studied X variable column number
   W = Z #First studied Y variable column number
   A = int(n) #Number of studied variables
@@ -187,7 +187,7 @@ def loopy(fn,m,n):
               out_Y.update(vals.keys())
   
       # Open output file and save all Y outcomes for each X 
-      f = open('output.csv', "w+")
+      f = open('inst/temp/output.csv', "w+")
       f.write(','.join([str(i) for i in out_Y]))
       f.write('\n')
   
@@ -261,7 +261,7 @@ def loopy(fn,m,n):
               """
               
               # Default parameter values
-              file2_name = 'output.csv'
+              file2_name = 'inst/temp/output.csv'
               var_X_name = ' Variable {}'.format(C)
               var_Y_name = ' Variable {}'.format(D)
               separator = ','
@@ -404,7 +404,7 @@ def loopy(fn,m,n):
               I_XY / math.sqrt(H_X * H_Y)
               ]
           
-          z = open('entropy_outputs.csv', 'a+', newline = '')
+          z = open('inst/temp/entropy_outputs.csv', 'a+', newline = '')
           with z:
               writer = csv.writer(z)
               writer.writerow(rowy)

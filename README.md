@@ -1,3 +1,5 @@
+![GitHub R package version](https://img.shields.io/github/r-package/v/edlansiaux/muinther)
+
 *muinther*: relationship study between several variables
 ==
 
@@ -9,7 +11,8 @@ A typical call to `pearsontable` to apply the Pearson algorithm to study correla
 
 ```
 library(muinther)
-pearsontable(source)
+pearsontable(Independent_NPIs)
+pearsontable(Synergestic_NPIs)
 ```
 
 where source represents a  matrix or data frame.
@@ -18,7 +21,8 @@ where source represents a  matrix or data frame.
 A typical call to `loop` to compute the Shannon theory outputs to study association between several variables (binary and/or quantitative) takes the following form:
 
 ```
-loop(source,1,8)
+loop(Independent_NPIs,1,12)
+loop(Independent_NPIs,1,26)
 ```
 
 where 
@@ -26,23 +30,27 @@ where
 - 1 is the first studied X variable column number,
 - 8 the number of studied variables.
 
-The output of the `loop` function is a csv object of Shannon theory outputs(X variable name, Y variable name, X information entropy, Y information entropy, Computed marginal EPMF of X, Computed marginal EPMF of Y, Chi2, Chi2 p-value, Information entropy of X, Information entropy of Y, Joint information entropy of X and Y, Conditional information entropy of Y given X, Conditional information entropy of X given Y, Mutual information of X and Y, Normalized mutual information of X and Y) on which standard plot and summary functions can be directly applied; the former uses functionalities from the ggplot2 package. The option of parallelization via the BiocParallel Bioconductor package is also provided.
+The output of the `loop` function is a csv object of Shannon theory outputs(X variable name, Y variable name, X information entropy, Y information entropy, Computed marginal EPMF of X, Computed marginal EPMF of Y, Chi2, Chi2 p-value, Information entropy of X, Information entropy of Y, Joint information entropy of X and Y, Conditional information entropy of Y given X, Conditional information entropy of X given Y, Mutual information of X and Y, Normalized mutual information of X and Y) on which standard plot and summary functions can be directly applied; the former uses functionalities from the ggplot2 package. 
 
 
 A typical `call` to heatmap2 to compute the Shannon theory outputs to study association between several variables (binary and/or quantitative) takes the following form:
 
 ```
-heatmap2(entropy_outputs)
+heatmap2(entropy_Independent_NPIs)
+heatmap2(entropy_Synergestic_NPIs)
 ```
 
 where entropy_outputs is a matrix or a data frame with the loop outputs.
 
 
-
+How to quote the package
+-
+Lansiaux, Edouard; Caut, Jean-Luc; Forget, Joachim; Pébaÿ, Philippe Pierre (2021): muinther. figshare. Software. https://doi.org/10.6084/m9.figshare.17161871.v1 
 
 Reference
 -
-Lansiaux E, Caut J-L, Forget J, Pébaÿ PP. Assessing the efficiency of COVID-19 NPIs in France: a retrospective study using a novel methodology. March 2021. doi:10.6084/m9.figshare.14195228.v1 
+- Lansiaux, Edouard; Tchagaspanian, Noé; Arnaud, Juliette; Durand, Pierre; Changizi, Mark; Forget, Joachim (2021): Side-effects of public health policies against Covid-19: the story of an over-reaction. figshare. Preprint. https://doi.org/10.6084/m9.figshare.13660910.v3 
+- Lansiaux, Edouard; Tchagaspanian, Noé; Forget, Joachim (2021): Community impact on a cryptocurrency: Twitter comparison example between Dogecoin and Litecoin. figshare. Preprint. https://doi.org/10.6084/m9.figshare.17125436.v1 
 
 License
 -

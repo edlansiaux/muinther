@@ -1,6 +1,9 @@
 ## Entropy outputs coumputation and visualization
 ### Computation
-loop(docs_phenotype_file_1,1,8)
+loop(Independent_NPIs,1,12)
+loop(Independent_NPIs,1,26)
 ### Visualization on a heatmap
-entropy_outputs <- readr::read_csv('entropy_outputs.csv')
-heatmap2(entropy_outputs)
+entropy_Independent_NPIs <- readr::read_csv('entropy_Independent_NPIs')
+entropy_Synergestic_NPIs <- readr::read_csv('entropy_Synergestic_NPIs')
+heatmap2(entropy_Independent_NPIs)
+heatmap2(entropy_Synergestic_NPIs)

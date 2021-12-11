@@ -1,2 +1,3 @@
 ## Pearson correlation computation and visualization
-pearsontable(docs_phenotype_file_1)
+pearsontable(Independent_NPIs)
+pearsontable(Synergestic_NPIs)

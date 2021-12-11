@@ -22,13 +22,13 @@ A typical call to `loop` to compute the Shannon theory outputs to study associat
 
 ```
 loop(Independent_NPIs,1,12)
-loop(Independent_NPIs,1,26)
+loop(Synergestic_NPIs,1,26)
 ```
 
 where 
 - source represents a  matrix or data frame, 
 - 1 is the first studied X variable column number,
-- 8 the number of studied variables.
+- 12 or 26 the number of studied variables.
 
 The output of the `loop` function is a csv object of Shannon theory outputs(X variable name, Y variable name, X information entropy, Y information entropy, Computed marginal EPMF of X, Computed marginal EPMF of Y, Chi2, Chi2 p-value, Information entropy of X, Information entropy of Y, Joint information entropy of X and Y, Conditional information entropy of Y given X, Conditional information entropy of X given Y, Mutual information of X and Y, Normalized mutual information of X and Y) on which standard plot and summary functions can be directly applied; the former uses functionalities from the ggplot2 package. 
 

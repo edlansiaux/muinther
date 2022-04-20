@@ -48,9 +48,8 @@ How to quote the package
 Lansiaux, Edouard; Caut, Jean-Luc; Forget, Joachim; Pébaÿ, Philippe Pierre (2021): muinther. figshare. Software. https://doi.org/10.6084/m9.figshare.17161871.v1 
 
 References
--
-- Lansiaux, Edouard; Tchagaspanian, Noé; Arnaud, Juliette; Durand, Pierre; Changizi, Mark; Forget, Joachim (2021): Side-effects of public health policies against Covid-19: the story of an over-reaction. figshare. Preprint. https://doi.org/10.6084/m9.figshare.13660910.v3 
-- Lansiaux, Edouard; Tchagaspanian, Noé; Forget, Joachim (2021): Community impact on a cryptocurrency: Twitter comparison example between Dogecoin and Litecoin. figshare. Preprint. https://doi.org/10.6084/m9.figshare.17125436.v1 
+- Lansiaux E, Caut J, Forget J, Pébaÿ PP. Assessing the efficiency of COVID-19 NPIs in France: a retrospective study using a novel methodology. Research Square; 2021. DOI: 10.21203/rs.3.rs-321360/v1.
+- Lansiaux E, Tchagaspanian N and Forget J (2022) Community Impact on a Cryptocurrency: Twitter Comparison Example Between Dogecoin and Litecoin. Front. Blockchain 5:829865. doi: 10.3389/fbloc.2022.829865 
 
 License
 -

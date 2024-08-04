@@ -49,7 +49,8 @@ Lansiaux, Edouard; Caut, Jean-Luc; Forget, Joachim; Pébaÿ, Philippe Pierre (20
 
 References
 - Lansiaux E, Caut J, Forget J, Pébaÿ PP. Assessing the efficiency of COVID-19 NPIs in France: a retrospective study using a novel methodology. Research Square; 2021. DOI: 10.21203/rs.3.rs-321360/v1.
-- Lansiaux E, Tchagaspanian N and Forget J (2022) Community Impact on a Cryptocurrency: Twitter Comparison Example Between Dogecoin and Litecoin. Front. Blockchain 5:829865. doi: 10.3389/fbloc.2022.829865 
+- Lansiaux E, Tchagaspanian N and Forget J (2022) Community Impact on a Cryptocurrency: Twitter Comparison Example Between Dogecoin and Litecoin. Front. Blockchain 5:829865. doi: 10.3389/fbloc.2022.829865
+- Tuma, I., Lansiaux, E.: Folding at home: Artificial intelligence and crypto symbiosis for the science. IET Blockchain 1–13 (2024). https://doi.org/10.1049/blc2.12060
 
 License
 -

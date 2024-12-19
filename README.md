@@ -1,4 +1,5 @@
 ![GitHub R package version](https://img.shields.io/github/r-package/v/edlansiaux/muinther)
+[![License](https://img.shields.io/github/license/edlansiaux/muinther)](https://github.com/edlansiaux/muinther/blob/master/LICENSE)
 
 *muinther*: relationship study between several variables
 ==

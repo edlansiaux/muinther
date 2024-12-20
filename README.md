@@ -51,11 +51,3 @@ Lansiaux, Edouard; Caut, Jean-Luc; Forget, Joachim; Pébaÿ, Philippe Pierre (20
 References
 - Lansiaux E, Tchagaspanian N and Forget J (2022) Community Impact on a Cryptocurrency: Twitter Comparison Example Between Dogecoin and Litecoin. Front. Blockchain 5:829865. doi: 10.3389/fbloc.2022.829865
 - Tuma, I., Lansiaux, E.: Folding at home: Artificial intelligence and crypto symbiosis for the science. IET Blockchain 1–13 (2024). https://doi.org/10.1049/blc2.12060
-
-License
--
-The muinther package is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License, version 3, as published by the Free Software Foundation.
-
-This program is distributed in the hope that it will be useful, but without any warranty; without even the implied warranty of merchantability or fitness for a particular purpose. See the GNU General Public License for more details.
-
-A copy of the GNU General Public License, version 3, is available at http://www.r-project.org/Licenses/GPL-3.
